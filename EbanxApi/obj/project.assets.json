@@ -460,26 +460,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jessi\\.nuget\\packages\\": {}
+    "C:\\Users\\Jessica\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jessi\\Desktop\\Pós\\EbanxAPI\\EbanxApi\\EbanxApi.csproj",
+      "projectUniqueName": "C:\\Users\\Jessica\\Desktop\\ebanx\\Ebanx-Api\\EbanxApi\\EbanxApi.csproj",
       "projectName": "EbanxApi",
-      "projectPath": "C:\\Users\\jessi\\Desktop\\Pós\\EbanxAPI\\EbanxApi\\EbanxApi.csproj",
-      "packagesPath": "C:\\Users\\jessi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jessi\\Desktop\\Pós\\EbanxAPI\\EbanxApi\\obj\\",
+      "projectPath": "C:\\Users\\Jessica\\Desktop\\ebanx\\Ebanx-Api\\EbanxApi\\EbanxApi.csproj",
+      "packagesPath": "C:\\Users\\Jessica\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jessica\\Desktop\\ebanx\\Ebanx-Api\\EbanxApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jessi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Jessica\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/v1/accounts")]
+[Route("/")]
 public class AccountController : ControllerBase
 {
     private readonly IAccountService _accountService;
@@ -12,22 +12,27 @@ public class AccountController : ControllerBase
     public IActionResult Reset()
     {
         _accountService.Reset();
-        return Ok();
+        return new ContentResult
+    {
+        Content = "OK",
+        StatusCode = 200,
+        ContentType = "text/plain"
+    };
     }
 
     [HttpGet("balance")]
-    public IActionResult GetBalance([FromQuery] string accountId)
+    public IActionResult GetBalance([FromQuery] string account_id)
     {
-        if (string.IsNullOrEmpty(accountId))
-            return BadRequest("AccountId is required.");
+        if (string.IsNullOrEmpty(account_id))
+            return NotFound(0);
 
-        accountId = accountId.ToLower();
-        var balance = _accountService.GetBalance(accountId);
+        account_id = account_id.ToLower();
+        var balance = _accountService.GetBalance(account_id);
 
         if (balance.HasValue)
             return Ok(balance.Value);
 
-        return NotFound("Account not found.");
+        return NotFound(0);
     }
 
     [HttpPost("event")]
@@ -67,7 +72,7 @@ public class AccountController : ControllerBase
         var success = _accountService.Withdraw(request.Origin.ToLower(), request.Amount);
 
         if (!success)
-            return BadRequest("Withdraw failed.");
+            return NotFound(0);
 
         var balance = _accountService.GetBalance(request.Origin.ToLower());
         return Created("", new { origin = new { id = request.Origin, balance } });
@@ -81,7 +86,7 @@ public class AccountController : ControllerBase
         var success = _accountService.Transfer(request.Origin.ToLower(), request.Destination.ToLower(), request.Amount);
 
         if (!success)
-            return BadRequest("Transfer failed.");
+            return NotFound(0);
 
         var originBalance = _accountService.GetBalance(request.Origin.ToLower());
         var destinationBalance = _accountService.GetBalance(request.Destination.ToLower());
