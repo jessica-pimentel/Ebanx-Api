@@ -1,8 +1,6 @@
 # EBANX Take-home assignment - Desenvolvedor de Software
 
-## Sobre
-
-Este repositório contém a implementação de uma API simples desenvolvida como parte do processo seletivo para a posição de Desenvolvedor de Software no EBANX. A API foi criada para lidar com solicitações GET e POST, com o objetivo de proporcionar uma avaliação das habilidades do candidato em desenvolvimento de software.
+Este repositório consiste na implementação de uma API básica desenvolvida em ASP.NET Core MVC. A aplicação utiliza métodos HTTP para manipular requisições e recebe dados diretamente da requisição usando os atributos [FromBody] e [FromQuery] para realizar o binding de parâmetros da requisição diretamente aos parâmetros dos métodos da API. O objetivo principal é implementar um serviço para criar, gerenciar e transferir valores entre contas. Para armazenamento dos dados, é empregado o uso de um Dictionary. Além disso, a aplicação segue uma arquitetura de camadas para separar a lógica de negócio da camada de apresentação.
 
 ### Endpoints
 
